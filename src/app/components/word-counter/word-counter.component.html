@@ -1,0 +1,27 @@
+<div class="word-count-app-cont">
+  <form class="word-count-app-form-cont">
+    <!-- <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input ngModel name="firstName" id="firstName" #firstName="ngModel" (change)="log(firstName)" type="text" class="form-control"
+    />
+  </div> -->
+
+    <h1>Word Count App</h1>
+
+    <div class="form-group">
+      <label for="comment">Enter Paragraph</label>
+      <textarea ngModel name="comment" id="comment" #comment="ngModel" cols="30" rows="10" type="text " class="form-control">
+      </textarea>
+    </div>
+
+    <div *ngFor="let key of keys; let i = index ">
+      <p *ngIf="i < 10">The Word
+        <b>{{key}}</b> has appeard
+        <b>{{counts[key]}}</b> times.</p>
+    </div>
+
+    <div>
+      <button class="btn btn-primary" (click)="onSubmit(comment.value);"> Submit </button>
+    </div>
+  </form>
+</div>
